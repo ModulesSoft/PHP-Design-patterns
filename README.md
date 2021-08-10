@@ -1,12 +1,6 @@
 Design Patterns in PHP
 ======================
 
-This code is designed to accompany the lynda.com video course "Design Patterns in PHP" by Keith Casey. If you've
- received this code without seeing the videos, go watch the videos. It will make way more sense and be more
- useful in general.
-
-======================
-
 # How to Use this Repository
 
 In each of the numbered folders, you will find two directories. The first folder - called before - is what your code
