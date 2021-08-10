@@ -1,6 +1,10 @@
 Design Patterns in PHP
 ======================
 
+This code is designed to exercise "Design Patterns in PHP" by Keith Casey.
+
+======================
+
 # How to Use this Repository
 
 In each of the numbered folders, you will find two directories. The first folder - called before - is what your code
