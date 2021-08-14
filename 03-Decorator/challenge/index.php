@@ -8,7 +8,7 @@
  *   videos. It will make way more sense and be more useful in general.
  */
 
-include_once 'decorator.php';
+include_once 'Decorator.php';
 
 $object = new Decorator();
 $object->sentence = "This is a sample sentence that we're going to manipulate in the Decorator.";
