@@ -8,7 +8,8 @@
  *   videos. It will make way more sense and be more useful in general.
  */
 
-include_once 'posts.php';
+include_once 'post.php';
+require "vendor/autoload.php";
 
 $parameters = array('id' => null, 'title' => 'Sample Title', 'body' => 'This is the body', 'create_date' => '2015-01-27');
 
