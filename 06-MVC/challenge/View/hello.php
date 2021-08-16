@@ -12,10 +12,10 @@
 <h1>Hello and welcome</h1>
 <ul>
     <li>
-        <a href="hello.php">Say Hello</a>
+        <a href="index.php?m=greeting&a=hello">Say Hello</a>
     </li>
     <li>
-        <a href="goodbye.php">Say Goodbye</a>
+        <a href="index.php?m=greeting&a=goodbye">Say Goodbye</a>
     </li>
     <li>
         <a href="unrecognized.php">Unrecognized Request</a>
