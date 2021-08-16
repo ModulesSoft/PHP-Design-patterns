@@ -2,14 +2,11 @@
 
 class Greeting
 {
-    private $page;
-    function __construct($page)
+    public function hello()
     {
-        if ($page == "hello") $this->page = 'hello';
-        elseif ($page == "goodbye") $this->page= 'goodbye';
-        else return false;
+        return "Hello and welcome";
     }
-    public function getPage(){
-        return $this->page;
+    public function goodbye(){
+        return "Goodbye and thanks for coming";
     }
 }

@@ -5,14 +5,18 @@ class GreetingController
     function __construct($page)
     {
         $this->page = $page;
-        $this->page == 'index' ? include_once "./View/index.php" : null;
-        $model = new Greeting($this->page);
-        if($model){
-            $page = $model->getPage();
-            include_once "./View/$page.php";
+
+        $model = new Greeting();
+        
+        if($this->page == 'index'){
+            $message = null;
+        }elseif($this->page == "hello"){
+            $message = $model->hello();
+        }elseif($this->page == "goodbye"){
+            $message = $model->goodbye();
+        }else{
+            new NotfoundController();
         }
-        else{
-            header("HTTP/1.0 404 Not Found");
-        }
+        include_once "./View/greetingPage.php";
     }
 }

@@ -8,7 +8,6 @@
  *   videos. It will make way more sense and be more useful in general.
  */
 
-use Smtpapi\Header;
 
 /**
  * Suggested URL patterns for your solution:
@@ -16,14 +15,14 @@ use Smtpapi\Header;
  *      index.php?m=greeting&a=goodbye
  */
 include_once "./Controller/GreetingController.php";
-
+include_once "./Controller/NotfoundController.php";
 include_once "./Model/Greeting.php";
 
-empty($_GET) ? new GreetingController('index') : Null;
-
-if (isset($_GET['m']) && $_GET['m'] == "greeting")
+if(empty($_GET)){
+    new GreetingController('index');
+}elseif (isset($_GET['m']) && $_GET['m'] == "greeting"){
     return new GreetingController($_GET['a']);
-else
-    return header("HTTP/1.0 404 Not Found");
-
-return header("HTTP/1.0 404 Not Found");
+}
+else{
+    return new NotfoundController();
+}
