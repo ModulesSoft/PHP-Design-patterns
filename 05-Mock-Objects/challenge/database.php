@@ -14,7 +14,7 @@ class User
 
     public function __construct()
     {
-        $this->connection = new PDO("mysql:host=localhost;dbname=development", 'developer', 'developer');
+        $this->connection = new PDO("mysql:host=localhost;dbname=php_design_patterns", 'developer', 'password');
     }
 
     public function delete($id)
