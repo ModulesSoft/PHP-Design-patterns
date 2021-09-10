@@ -7,20 +7,16 @@
  *   by Keith Casey. If you've received this code without seeing the videos, go watch the
  *   videos. It will make way more sense and be more useful in general.
  */
+include_once "posts.php";
 
+$posts = new Posts();
 
-$connection = new PDO("mysql:host=localhost;dbname=development", 'developer', 'developer');
-
-$sql = 'SELECT * FROM posts';
-foreach ($connection->query($sql) as $row) {
+foreach ($posts->fetchAll() as $row) {
     echo $row['title'] . '<br />';
 }
 
 echo '<hr />';
 
-$sql = 'SELECT * FROM posts WHERE id = 1';
-
-$result = $connection->query($sql);
-$row = $result->fetch();
+$row = $posts->fetchById(1);
 
 echo $row['title'];
