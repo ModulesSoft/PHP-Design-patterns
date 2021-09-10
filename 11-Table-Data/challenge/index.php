@@ -7,9 +7,10 @@
  *   by Keith Casey. If you've received this code without seeing the videos, go watch the
  *   videos. It will make way more sense and be more useful in general.
  */
+require "vendor/autoload.php";
 include_once "posts.php";
 
-$posts = new Posts();
+$posts = new PostsGateway();
 
 foreach ($posts->fetchAll() as $row) {
     echo $row['title'] . '<br />';

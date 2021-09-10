@@ -1,18 +1,30 @@
 <?php 
-class Posts{
-    protected $connection;
+
+use Zend\Db\TableGateway\TableGateway as TableGateway;
+use Zend\Db\Adapter\Adapter;
+
+class PostsGateway extends TableGateway{
+    // protected $connection;
     public function __construct()
     {
-        $this->connection = new PDO("mysql:host=localhost;dbname=php_design_patterns", 'developer', 'password');
+        $configArray = array(
+            'driver' => 'Mysqli',
+            'database' => 'php_design_patterns',
+            'username' => 'developer',
+            'password' => 'password',
+            'options' => array('buffer_results' => true)
+        );
+
+        $adapter = new Adapter($configArray);
+
+        parent::__construct('posts', $adapter);
     }
     public function fetchAll()
     {
-        $sql = 'SELECT * FROM posts';
-        return $this->connection->query($sql);
+        return $this->select();
     }
     public function fetchById(int $id){
-        $sql = 'SELECT * FROM posts WHERE id = 1';
-        return $this->connection->query($sql);
+        return $this->select(array('id' => $id));
     }
 }
 
