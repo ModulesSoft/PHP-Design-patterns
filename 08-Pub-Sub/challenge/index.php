@@ -9,6 +9,7 @@
  */
 
 include_once 'component.php';
+include_once 'dispatcher.php';
 
 $componentA = new Component('Component A');
 $componentB = new Component('Component B');
@@ -19,7 +20,11 @@ $componentC = new Component('Component C');
  *   has to be listed out individually.
  */
 
+$pubsub = Dispatcher::getInstance();
+$pubsub::subscribe($componentA,$componentB);
+$pubsub::subscribe($componentB,$componentC);
+
 $i = 0;
 $componentA->addOneAndEcho($i++);
-$componentB->addOneAndEcho($i++);
-$componentC->addOneAndEcho($i++);
+// $componentB->addOneAndEcho($i++);
+// $componentC->addOneAndEcho($i++);

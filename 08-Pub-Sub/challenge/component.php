@@ -21,5 +21,7 @@ class Component
     {
         $i++;
         echo $i . '-' . $this->name . '<br />';
+        $instance = Dispatcher::getInstance();
+        $instance::publish($this,$i);
     }
 }
